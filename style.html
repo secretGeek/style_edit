@@ -1,0 +1,85 @@
+<html>
+<head>
+<title>Style this page</title>
+</head>
+<body>
+<h1>Style this page</h1>
+<p>You can edit the style of this page.</p>
+<p>Just <strong>click</strong> on the style tag below to edit it directly. Changes are applied as soon as the keystrokes leave your fingers.</p>
+<p>Editing the style <strong>does not</strong> require any javascript.</p>
+<p>It uses techniques from <a href='https://secretgeek.github.io/html_wysiwyg/html.html'>html-wysiwyg</a>, styles from <a href='https://jrl.ninja/etc/1/'>58 bytes of css to look great nearly everywhere</a>, and a suggestion from <a href='https://news.ycombinator.com/item?id=20102451'>hacker news user 'phelm'</a> about making a style tag <code>contenteditable</code>.</p>
+
+<p>It relies on 4 things:</p>
+
+<ol>
+<li>The style tag is <em>visible</em> thanks to: <code>style { display:block;}</code>
+<li>The style tag is laid out in a <em>readable</em> way thanks to: <code>style { white-space: pre-wrap; }</code>
+<li>The style tag is <em>editable</em> thanks to the attribute: <code>contenteditable=true</code>
+<li>There is no spellchecking inside the editable item because of the attribute <code>spellcheck=false</code>
+</ol>
+
+<style id='editable' contenteditable=true spellcheck=false>
+/* this style tag is editable */
+
+/* style the page */
+body {
+  max-width:70ch;
+  padding:2ch;
+  margin:auto;
+  color:#333;
+  font-size:1.2em;
+}
+
+h1 {
+  color:#404;
+  font-family:sans-serif;
+  text-shadow:0 0 7px #888;
+}
+
+em {
+  text-shadow:0 0 7px green;
+}
+
+strong {
+text-shadow:0 0 7px red;
+}
+
+p {
+}
+
+code {
+}
+
+aside {
+}
+</style>
+
+<style>
+/* style the editable style */
+style#editable { 
+  display:block;
+  white-space: pre-wrap;
+  border:2px dashed #CCC;
+  border-radius:8px;
+}
+
+style#editable::before { 
+  content:'<style>'
+}
+
+style#editable::after { 
+  content:'<\/style>'
+}
+
+style#editable::before,style#editable::after {
+  color:rgba(136, 18, 128, 0.5);
+  font-weight:100;
+  font-size:1.0em
+}
+</style>
+
+<p><a href='https://github.com/secretGeek/style_edit'>Source code available at github.</a></p>
+
+<aside><p>Does anyone remember the <a href='http://htmledit.squarefree.com/'>squarefree realtime html editor</a>? It's still alive, still awesome.</p></aside>
+</body>
+</html>
