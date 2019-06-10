@@ -1,8 +1,25 @@
+<!doctype html>
 <html>
 <head>
 <title>Style this page</title>
 </head>
 <body>
+
+
+
+<header style=''>
+
+&lt!-- this space left deliberately blank --&gt;
+
+
+&lt!-- ...for jelly stains --&gt;
+
+
+</header>
+
+</blockquote>
+
+
 <h1>Style this page</h1>
 <p>You can edit the style of this page.</p>
 <p>Just <strong>click</strong> on the style tag below to edit it directly. Changes are applied as soon as the keystrokes leave your fingers.</p>
@@ -18,49 +35,68 @@
 <li>There is no spellchecking inside the editable item because of the attribute <code>spellcheck=false</code>
 </ol>
 
+<p>There is also at least 1 very nasty problem:</p>
+
+<p><strong>Don't press [Enter] while editing!</strong> The implementation of <code>contenteditable</code> is such that pressing [Enter] causes a new <code>div</code> element to be injected, and our styles stop being applied after that element.
+
 <style id='editable' contenteditable=true spellcheck=false>
 /* this style tag is editable */
 
 /* style the page */
+
 body {
-  max-width:70ch;
-  padding:2ch;
-  margin:auto;
-  color:#333;
-  font-size:1.2em;
+  max-width: 70ch;
+  padding: 2ch;
+  margin: auto;
+  color: #333;
+  font-size: 1.2em;
+}
+
+header {
+  white-space: pre-wrap;
+  font-family: monospace
 }
 
 h1 {
-  color:#404;
-  font-family:sans-serif;
-  text-shadow:0 0 7px #888;
+  color: #404;
+  font-family: sans-serif;
+  text-shadow: 0 0 7px #AAA;
 }
 
 em {
-  text-shadow:0 0 7px green;
+  text-shadow: 0 0 7px yellow;
 }
 
 strong {
-text-shadow:0 0 7px red;
+text-shadow: 0 0 7px lime;
 }
 
 p {
+ margin:1.5em 0;
+
 }
 
 code {
+  background-color: #FFD;
 }
 
 aside {
+  font-style:italic;
 }
 </style>
 
+
+
 <style>
-/* style the editable style */
+/* style of the editable style tag. This is not directly editable, as it breaks the page too easily. */
 style#editable { 
   display:block;
   white-space: pre-wrap;
-  border:2px dashed #CCC;
+  border:4px dashed #EEE;
   border-radius:8px;
+  margin: 2em 0;
+  padding:2rem;
+  font-family:monospace;
 }
 
 style#editable::before { 
@@ -79,6 +115,9 @@ style#editable::before,style#editable::after {
 </style>
 
 <p><a href='https://github.com/secretGeek/style_edit'>Source code available at github.</a></p>
+
+<p>lb<br />
+<p>.: <a href='http://secretGeek.net'>secretGeek.net</a> :.</p>
 
 <aside><p>Does anyone remember the <a href='http://htmledit.squarefree.com/'>squarefree realtime html editor</a>? It's still alive, still awesome.</p></aside>
 </body>
